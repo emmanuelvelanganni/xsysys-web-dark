@@ -1,0 +1,84 @@
+<style>
+.slider {
+	width:500px;
+	height:400px;
+	margin:0 auto;
+	position:relative;
+	left:0px;
+	top:0px;
+	margin:0px;
+	padding:0px;
+	overflow:hidden;
+}
+.sliderframe {
+	width:100%;
+	height:400px;
+	position:absolute;
+	left:0px;
+	top:0px;
+	margin:0px;
+	padding:0px;
+}
+.slide_blue, .slide_red, .slide_purple {
+	width:inherit;
+	height:inherit;
+	margin:0px;
+	padding:0px;
+	position:absolute;
+	top:0px;
+	/*transition:all 5s linear;
+	-ms-transition:all 5s linear; */
+	float:left;
+}
+.blue_img, .red_img, .purple_img {
+	width:inherit;
+	left:0px;
+	vertical-align:top;
+}
+.slide_blue {
+	background:url('Jssor.Slider.FullPack/img/1920/blue_xsysys.jpg') repeat-x scroll 50% 0 rgba(0, 0, 0, 0);
+	left:0px;
+}
+.slide_red {
+	background:url('Jssor.Slider.FullPack/img/1920/red_xsysys.jpg') repeat-x scroll 50% 0 rgba(0, 0, 0, 0);
+	left:0px;
+}
+.sliderframe_purple {
+	background:url('Jssor.Slider.FullPack/img/1920/purple_xsysys.jpg') repeat-x scroll 50% 0 rgba(0, 0, 0, 0);
+	left:0px;
+}
+</style>
+<script>
+	$(document).ready(function(){
+		var slide_left = $('body').css('width');
+		slide_left = 0-parseInt(slide_left);
+		var red_margin = $('.slide_blue').css('width');
+		red_margin = parseInt(red_margin);
+		$('.slide_red').css({'margin-left':red_margin+'px'});
+		purple_margin = red_margin + red_margin;
+		purple_margin = parseInt(purple_margin);
+		$('.slide_purple').css({'margin-left':purple_margin+'px'});
+	$('.sliderframe').each(function(){
+		$(this).animate({'left':slide_left+'px'}, 5000, "linear");
+	});
+		//var purpleleft = $('.sliderframe_red').css('left');
+		//purpleleft = parseInt(purpleleft);
+		//$('.sliderframe_purple').animate({'left':purpleleft+'px'});
+		
+		
+	});
+</script>
+<div class="slider">
+	<div class="sliderframe">
+		<div class="slide_blue slideme">
+			<img src="Jssor.Slider.FullPack/img/1920/blue_xsysys.jpg" class="blue_img"/>
+		</div>
+		<div class="slide_red slideme">
+			<img src="Jssor.Slider.FullPack/img/1920/red_xsysys.jpg" class="red_img"/>
+		</div>
+		<div class="slide_purple slideme">
+			<img src="Jssor.Slider.FullPack/img/1920/cyan_xsysys.jpg" class="cyan_img"/>
+		</div>
+	</div>
+</div>
+

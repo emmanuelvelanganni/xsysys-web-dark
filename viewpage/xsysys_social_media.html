@@ -1,0 +1,34 @@
+<div id="xsysys_social_tools" class="xsysys_social_tools" style="display: block;" role="navigation" aria-label="Social tools">
+	<ul class="xsysys_active" role="toolbar" aria-label="Social tool list">
+		<li>
+			<a class="xsysys_share_print" title="Print this page" href="#" rel="print" role="button" tabindex="0">Print this page</a>
+		</li>
+		<li>
+			<a class="xsysys_share_email" title="E-mail this page" href="#" onclick="javascript:window.location='mailto:?subject=Interesting information&body=I thought you might find this information interesting: ' + window.location;" rel="email" role="button" tabindex="-1">E-mail this page</a>
+		</li>
+		<li>
+			<a class="xsysys_share_digg" title="Digg" href="http://digg.com" rel="digg" role="button" tabindex="-1">Digg</a>
+		</li>
+		<li>
+			<a class="xsysys_share_facebook" title="Facebook" href="http://www.facebook.com" rel="facebook" role="button" tabindex="-1">Facebook</a>
+		</li>
+		<li>
+			<a class="xsysys_share_twitter" title="Twitter" href="http://twitter.com" rel="twitter" role="button" tabindex="-1">Twitter</a>
+		</li>
+		<li>
+			<a class="xsysys_share_delicious" title="Delicious" href="http://delicious.com" rel="delicious" role="button" tabindex="-1">Delicious</a>
+		</li>
+		<li>
+			<a class="xsysys_share_linkedin" title="Linked In" href="http://www.linkedin.com" rel="linkedin" role="button" tabindex="-1">Linked In</a>
+		</li>
+	</ul>
+</div>
+<script>
+	$(document).ready(function(){
+		$('.xsysys_share_print').on('click', function(e){
+			e.preventDefault();
+			window.print();
+		});
+	});
+</script>
+

@@ -1,0 +1,273 @@
+<script>
+	$(document).ready(function(){
+		/*liststatus= $('#promo li').css('left');
+		if(liststatus == -516.789+'px') {
+			$(this).find('.textin').animate({'left':'-600px'},2000, 'linear' );
+		}*/
+	});
+</script>
+<style>
+#outer
+{
+	width:100%;
+	height:400px;
+	margin:0px auto;
+	border:none;
+	padding:0px;
+	background:#fff;
+	position:relative;
+	
+	/* CSS3 Shadow */
+	-moz-box-shadow: 0 0 6px #ccc;
+	-webkit-box-shadow: 0 0 6px #ccc;
+	box-shadow: 0 0 6px #ccc;
+}
+
+#promo, #promo li
+{
+	margin:0;
+	padding:0;
+	list-style-type:none;
+	width:100%;
+	height:100%;
+}
+
+#blue {
+	display:block;
+}
+#red {
+	display:none;
+}
+#cyan {
+	display:none;
+}
+
+#promo li img {
+	width:998px;
+	height:400px;
+}
+#promo, #promo li div.slideframe {
+	margin:0 auto;
+	padding:0px;
+	width:100%;
+	height:100%;
+	overflow:hidden;
+}
+#promo li div.slideframe .inner_ribbon {
+	float: none;
+    margin: 0 auto;
+    padding: 0;
+    width: 998px;
+	height:100%;
+	position:relative;
+}
+#promo li div.slideframe .inner_ribbon h2{
+	position:absolute;
+	left:0;
+	height:auto;
+	padding:0px;
+	margin:0px;
+	outline:none;
+	border:none;
+	vertical-align:baseline;
+}
+#promo li div.slideframe .inner_ribbon h2 a{ 
+	text-decoration:none;
+	outline:none;
+	border:none;
+	vertical-align:baseline;
+}
+#promo li div.slideframe .inner_ribbon h2 a img.textin {  
+	width:578px;
+	height:347px;
+	vertical-align:baseline;
+	padding-top:50px;
+	box-sizing:border-box;
+	-moz-box-sizing:border-box;
+	-webkit-box-sizing:border-box;
+	position:relative;
+	left:0px;
+}
+#promo li.blue div.slide1{
+	background-image:url('Jssor.Slider.FullPack/img/1920/blue_xsysys.jpg');
+	background-repeat:repeat-x;
+	background-attachment:scroll;
+	background-position:50% 0;
+	background-color:rgb(0,0,0);
+	/*background:url('Jssor.Slider.FullPack/img/1920/blue_xsysys.jpg') repeat-x scroll 50% 0 rgba(0, 0, 0, 0);*/
+}
+#promo li.red div.slide2{
+	background-image:url('Jssor.Slider.FullPack/img/1920/red_xsysys.jpg');
+	background-repeat:repeat-x;
+	background-attachment:scroll;
+	background-position:50% 0;
+	background-color:rgb(0,0,0);
+	/*background:url('Jssor.Slider.FullPack/img/1920/red_xsysys.jpg') repeat-x scroll 50% 0 rgba(0, 0, 0, 0);*/
+}
+#promo li.cyan div.slide3{
+	background-image:url('Jssor.Slider.FullPack/img/1920/cyan_xsysys.jpg');
+	background-repeat:repeat-x;
+	background-attachment:scroll;
+	background-position:50% 0;
+	background-color:rgb(0,0,0);
+	/*background:url('Jssor.Slider.FullPack/img/1920/cyan_xsysys.jpg') repeat-x scroll 50% 0 rgba(0, 0, 0, 0);*/
+}
+#navSlide {
+	bottom: 10px;
+    box-sizing: border-box;
+    display: inline-block;
+    height: 40px;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    /*left: 1034px;*/
+	left: 73%;
+	text-align:center;
+    width:172px;
+    z-index: 999;
+}
+#navSlide a:nth-child(1), #navSlide a.activeSlide:nth-child(1) {
+	background-image:url('Jssor.Slider.FullPack/img/1920/blue.png');
+}
+#navSlide a:nth-child(2), #navSlide a.activeSlide:nth-child(2) {
+	background-image:url('Jssor.Slider.FullPack/img/1920/red.png');
+}
+#navSlide a:nth-child(3), #navSlide a.activeSlide:nth-child(3) {
+	background-image:url('Jssor.Slider.FullPack/img/1920/cyan.png');
+}
+#navSlide a {
+	height:36px;
+	width: 51px;
+	margin-right:5px;
+	float:left;
+	display:inline-block;
+	text-decoration:none;
+	border: 3px solid rgba(255, 255, 255, 0.6);
+	border: 3px solid rgb(204, 204, 204);
+	-webkit-box-sizing:border-box;
+	-moz-box-sizing:border-box;
+	-ms-box-sizing:border-box;
+	box-sizing:border-box;
+	cursor:pointer;
+	background-repeat:no-repeat;
+	background-attachment:scroll;
+	background-position:0 0;
+	background-color:transparent;
+	color:#cccccc;
+	line-height:30px;
+}
+
+.ie #navSlide > a, .ie #navSlide > a.activeSlide { background-image:url('Jssor.Slider.FullPack/img/1920/blue.png'); } /* first-child, overwritten by below */
+.ie #navSlide > a + a, .ie #navSlide > a + a.activeSlide { background-image:url('Jssor.Slider.FullPack/img/1920/red.png');} /* second-child, overwritten by below, etc */
+.ie #navSlide a + a + a, .ie #navSlide > a + + a + a.activeSlide {	background-image:url('Jssor.Slider.FullPack/img/1920/cyan.png'); }
+
+#navSlide a:last-child {
+	margin-right:0px;
+}
+#navSlide a:last-child::after {
+	clear:both;
+}
+/* The index automatically gets an activeSlide class, use this to indicate the current slide */
+#navSlide a.activeSlide
+{
+	font-weight:bold;
+	background:#fff;
+	border-color:#ffffff;
+	margin-top:-5px;
+	border: 3px solid rgb(255, 255, 255);
+	color:#ffffff;
+}
+#outer #promo li div.slideframe .inner_ribbon h2 a img.textin.emman{
+	-webkit-animation: mymove 1s; /* Chrome, Safari, Opera */ 
+	animation: mymove 3s;
+	position:relative;
+}
+@-webkit-keyframes mymove {
+    0%   {left: 0px;}
+    25%  {left: -300px;}
+    75%  {left: -500px}
+    100% {left: -700px;}
+}
+@keyframes mymove {
+    0%   {left: 0px;}
+    25%  {left: -500px;}
+    75%  {left: -700px}
+    100% {left: -1500px;}
+}
+
+</style>
+<script>
+//$('#slideshow').cycle('command');
+$('#promo')
+.before('<div id="navSlide">')
+.cycle({
+	activePagerClass: 'activeSlide',
+	//fx: 'scrollHorz',
+	//fx: 'scrollLeft',
+	fx: 'uncover',
+	timeout: 8000,
+	speed: 1700,
+	next: '#promonav .next',
+	pager: '#navSlide',
+	height: 400,
+	pause: 1,
+	easing:  'easeInOutCubic',
+	//before: onBefore,
+	//after: onAfter,
+	before: function (curr, next, opts) {
+		//alert("Current slide " + opts.currSlide);
+		$(curr).find('.textin').addClass('emman');
+		//textSlide();
+	},
+	after: function (curr, next, opts) {
+		//alert("Current slide " + opts.currSlide);
+		$(curr).find('.textin').removeClass('emman');
+	}
+});
+function textSlide() {
+	//$("li.emman").find('.textin').delay(5000).animate({'left':'-700px'},"slow", 'linear');
+	//$("li.notActive").find('.textin').css({'left':'0px'});
+}
+//setInterval(textSlide, 5000);
+</script>
+
+
+
+
+<div id="outer">
+	<ul id="promo">
+		<li id="blue" class="blue">
+			<div class="slideframe slide1">
+				<div class="inner_ribbon">
+					<h2>
+						<a href="#">
+							<img id="blueimg" class="textin" src="Jssor.Slider.FullPack/img/1920/text_in_1.png" width="578" height="297"/>
+						</a>
+					</h2>
+				</div>
+			</div>
+		</li>
+		<li id="red" class="red">
+			<div class="slideframe slide2">
+				<div class="inner_ribbon">
+					<h2>
+						<a href="#">
+							<img id="redimg" class="textin" src="Jssor.Slider.FullPack/img/1920/text_in_2.png" width="578" height="297"/>
+						</a>
+					</h2>
+				</div>
+			</div>
+		</li>
+		<li id="cyan" class="cyan">
+			<div class="slideframe slide3">
+				<div class="inner_ribbon">
+					<h2>
+						<a href="#">
+							<img id="cyanimg" class="textin" src="Jssor.Slider.FullPack/img/1920/text_in_3.png" width="578" height="297"/>
+						</a>
+					</h2>
+				</div>
+			</div>
+		</li>
+	</ul>
+</div>
